@@ -1,5 +1,5 @@
 .vs
 debug.log
-BitViewer/bin
-BitViewer/obj
+FileBitViewer/bin
+FileBitViewer/obj
 tests

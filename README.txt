@@ -1,4 +1,4 @@
-BitViewer is a simple bit exploration tool, originally written by an author that chose to remain anonymous.
+FileBitViewer is a simple bit exploration tool for files, recently forked from https://github.com/alk0ve/BitViewer.
 
 Future plans
 =======================
