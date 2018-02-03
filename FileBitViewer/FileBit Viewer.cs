@@ -11,10 +11,10 @@ namespace FileBitViewer
     public partial class MainForm : Form
     {
 
-        long MAX_READ_LENGTH = (int.MaxValue / 8);
+        long MAX_READ_LENGTH = int.MaxValue;
         uint BASIC_BORDER_SIZE = 1;
 
-        BitArray fileData = null;
+        byte[] fileData = null;
         Bitmap bitsBitmap = null;
 
 
@@ -150,7 +150,7 @@ namespace FileBitViewer
             }
         }
 
-        private BitArray GetRawBitsFromFile(string fileName)
+        private byte[] GetRawBitsFromFile(string fileName)
         {
             byte[] bytesFromFile;
 
@@ -186,7 +186,7 @@ namespace FileBitViewer
 
             // rev8 all the bytes!
             REV8(bytesFromFile);
-            return new BitArray(bytesFromFile);
+            return bytesFromFile;
         }
 
         private void PaintBits()
@@ -211,7 +211,8 @@ namespace FileBitViewer
             // configure the scroll bars
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            uint numLines = ((uint)fileData.Length - (uint)currentChop + currentFrameSize - 1) / currentFrameSize;
+            // 
+            Decimal numLines = ((((Decimal)fileData.Length)*8) - (Decimal)currentChop + (Decimal)currentFrameSize - 1) / (Decimal)currentFrameSize;
             
             // the scrollbar's max is set to the frame size if it is needed.
             if (visibleBitsPerLine - 1 < currentFrameSize)
@@ -263,10 +264,10 @@ namespace FileBitViewer
 
 
                 // draw all them bits
-                int index = (int)currentFrameSize * (int)vScrollBar1.Value;
-                index += (int)currentChop;
+                Decimal index = (Decimal)currentFrameSize * (Decimal)vScrollBar1.Value;
+                index += (Decimal)currentChop;
 
-                if (index < fileData.Length)
+                if (index < (((Decimal)fileData.Length) * 8))
                 {
                     //draw rows
                     for (int y = 0; y < visibleNumLines; ++y)
@@ -275,12 +276,12 @@ namespace FileBitViewer
                         index += hScrollBar1.Value;
                         for (int x = 0; x < currentFrameSize - hScrollBar1.Value; ++x)
                         {
-                            if (index >= fileData.Count)
+                            if (index >= (((Decimal)fileData.Length) * 8))
                                 break;
                             if (x < visibleBitsPerLine)
                             {
                                 // draw a pixel
-                                if (fileData[index])
+                                if ((fileData[(int)(index / 8)] & (1 << (int)(index % 8))) != 0)
                                 {
                                     currentBitBrush = oneBrush;
                                 }
