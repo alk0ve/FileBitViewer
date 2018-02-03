@@ -45,7 +45,7 @@
             this.numericUpDownLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.numericUpDownLength.Location = new System.Drawing.Point(123, 92);
             this.numericUpDownLength.Maximum = new decimal(new int[] {
-            268435456,
+            2147483647,
             0,
             0,
             0});
@@ -57,6 +57,7 @@
             this.numericUpDownLength.Name = "numericUpDownLength";
             this.numericUpDownLength.Size = new System.Drawing.Size(175, 32);
             this.numericUpDownLength.TabIndex = 0;
+            this.numericUpDownLength.ThousandsSeparator = true;
             this.numericUpDownLength.Value = new decimal(new int[] {
             1024,
             0,
@@ -71,9 +72,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.Location = new System.Drawing.Point(53, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 15);
+            this.label3.Size = new System.Drawing.Size(239, 15);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Currently limited at MAXINT/8 = 268435456.";
+            this.label3.Text = "Currently limited at MAXINT = 2147483647";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnOK
@@ -122,18 +123,14 @@
             this.numericUpDownOffset.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.numericUpDownOffset.Location = new System.Drawing.Point(123, 38);
             this.numericUpDownOffset.Maximum = new decimal(new int[] {
-            268435456,
-            0,
+            -1530494976,
+            232830,
             0,
             0});
             this.numericUpDownOffset.Name = "numericUpDownOffset";
             this.numericUpDownOffset.Size = new System.Drawing.Size(175, 32);
             this.numericUpDownOffset.TabIndex = 0;
-            this.numericUpDownOffset.Value = new decimal(new int[] {
-            1024,
-            0,
-            0,
-            0});
+            this.numericUpDownOffset.ThousandsSeparator = true;
             this.numericUpDownOffset.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericUpDownOffset_KeyPress);
             // 
             // AskHowManyBits
