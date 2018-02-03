@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BitViewer
+namespace FileBitViewer
 {
     public partial class AskHowManyBits : Form
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BitViewer.Properties
+namespace FileBitViewer.Properties
 {
 
 

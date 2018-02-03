@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-namespace BitViewer
+namespace FileBitViewer
 {
     
     partial class MainForm
@@ -49,22 +49,17 @@ namespace BitViewer
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotalFrameSize = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Sort = new System.Windows.Forms.Button();
-            this.sortStart = new System.Windows.Forms.NumericUpDown();
-            this.sortEnd = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.GridSpacing = new System.Windows.Forms.NumericUpDown();
             this.labelGrid = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ImagePanel = new BitViewer.DoubleBufferedPanel();
+            this.ImagePanel = new FileBitViewer.DoubleBufferedPanel();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.FrameSize1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrameSize2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bitSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readFileOffset)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sortStart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sortEnd)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSpacing)).BeginInit();
             this.ImagePanel.SuspendLayout();
@@ -256,56 +251,6 @@ namespace BitViewer
             this.label4.Text = "X";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Sort
-            // 
-            this.Sort.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.Sort, 2);
-            this.Sort.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sort.ForeColor = System.Drawing.Color.Black;
-            this.Sort.Location = new System.Drawing.Point(828, 3);
-            this.Sort.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Sort.Name = "Sort";
-            this.Sort.Size = new System.Drawing.Size(135, 34);
-            this.Sort.TabIndex = 17;
-            this.Sort.Text = "SORT";
-            this.Sort.UseVisualStyleBackColor = true;
-            this.Sort.Click += new System.EventHandler(this.Sort_Click);
-            // 
-            // sortStart
-            // 
-            this.sortStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sortStart.Location = new System.Drawing.Point(828, 43);
-            this.sortStart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.sortStart.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.sortStart.Name = "sortStart";
-            this.sortStart.Size = new System.Drawing.Size(64, 22);
-            this.sortStart.TabIndex = 18;
-            this.sortStart.ValueChanged += new System.EventHandler(this.sortStart_ValueChanged);
-            // 
-            // sortEnd
-            // 
-            this.sortEnd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sortEnd.AutoSize = true;
-            this.sortEnd.Location = new System.Drawing.Point(896, 43);
-            this.sortEnd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.sortEnd.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.sortEnd.Name = "sortEnd";
-            this.sortEnd.Size = new System.Drawing.Size(67, 22);
-            this.sortEnd.TabIndex = 19;
-            this.sortEnd.ValueChanged += new System.EventHandler(this.sortEnd_ValueChanged);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -325,9 +270,6 @@ namespace BitViewer
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.071767F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.075814F));
             this.tableLayoutPanel1.Controls.Add(this.LoadBitsButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.sortEnd, 9, 1);
-            this.tableLayoutPanel1.Controls.Add(this.sortStart, 8, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Sort, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.FrameSize2, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.readFileOffset, 7, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 7, 0);
@@ -436,13 +378,11 @@ namespace BitViewer
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimumSize = new System.Drawing.Size(600, 80);
             this.Name = "MainForm";
-            this.Text = "Lorem Ipsum";
+            this.Text = "File Bit Viewer";
             ((System.ComponentModel.ISupportInitialize)(this.FrameSize1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrameSize2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bitSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readFileOffset)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sortStart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sortEnd)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSpacing)).EndInit();
@@ -466,9 +406,6 @@ namespace BitViewer
         private VScrollBar vScrollBar1;
         private Label lblTotalFrameSize;
 		private Label label4;
-        private Button Sort;
-        private NumericUpDown sortStart;
-        private NumericUpDown sortEnd;
         private HScrollBar hScrollBar1;
         private TableLayoutPanel tableLayoutPanel1;
         private ToolTip toolTip1;

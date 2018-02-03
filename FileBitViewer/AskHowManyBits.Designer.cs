@@ -1,4 +1,4 @@
-﻿namespace BitViewer
+﻿namespace FileBitViewer
 {
     partial class AskHowManyBits
     {
